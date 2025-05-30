@@ -1,41 +1,40 @@
-import java.awt.*;
-
 public class Animal {
     private String nome;
-    private String  tipo;
+    private String tipo;
     private String especie;
 
-    public Animal(String nome, String tipo, String especie){
+    public Animal(String nome, String tipo, String especie) {
         this.nome = nome;
         this.tipo = tipo;
         this.especie = especie;
     }
 
-    public  String toString() {
+    @Override
+    public String toString() {
         return "nome: " + nome + "\ntipo: " + tipo + "\nespecie: " + especie;
     }
 
-    public  String getNome() {
+    public String getNome() {
         return nome;
     }
 
-    public void setNome() {
+    public void setNome(String nome) {
         this.nome = nome;
     }
 
-    public  String getTipo() {
+    public String getTipo() {
         return tipo;
     }
 
-    public void setTipo() {
+    public void setTipo(String tipo) {
         this.tipo = tipo;
     }
 
-    public  String getEspecie() {
+    public String getEspecie() {
         return especie;
     }
 
-    public void setEspecie() {
+    public void setEspecie(String especie) {
         this.especie = especie;
     }
 }

@@ -18,6 +18,7 @@ public class Main {
                     adicionarAnimal(animal, scanner);
                     break;
                 case 2:
+                    buscarAnimal(animal, scanner);
                     break;
                 case 3:
                     break;
@@ -42,7 +43,7 @@ public class Main {
 
     public static void adicionarAnimal(List<Animal> animal, Scanner scanner) {
         System.out.println("Digite o nome do animal:");
-        String none = scanner.nextLine();
+        String nome = scanner.nextLine();
 
         System.out.println("Digite Tipo do animal:");
         String tipo = scanner.nextLine();
@@ -50,9 +51,29 @@ public class Main {
         System.out.println("Digite a especie do animal:");
         String especie = scanner.nextLine();
 
-        Animal novoAnimal = new Animal(none,tipo,especie);
+        Animal novoAnimal = new Animal(nome,tipo,especie);
         animal.add(novoAnimal);
 
         System.out.println("Animal adicionado com sucesso!");
+    }
+
+    public static void buscarAnimal(List<Animal> animais, Scanner scanner) {
+        System.out.println("Digite o nome do animal :");
+        String nomeBusca = scanner.nextLine();
+
+        boolean encontrado = false;
+
+        for (Animal animal : animais) {
+            if (animal.getNome().equalsIgnoreCase(nomeBusca)) {
+                System.out.println("Animal encontrado:");
+                System.out.println(animal);
+                System.out.println("-------------------------");
+                encontrado = true;
+            }
+        }
+
+        if (!encontrado) {
+            System.out.println("Nenhum animal com esse nome foi encontrado.");
+        }
     }
 }
